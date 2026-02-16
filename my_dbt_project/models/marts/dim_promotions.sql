@@ -1,5 +1,5 @@
 with
-    stg_promotions as (select * from {{ ref('stg_promotions') }}),
+    stg_promotions as (select * from {{ ref('int_promotions_valid') }}),
     
     dim_promotions as (
         select

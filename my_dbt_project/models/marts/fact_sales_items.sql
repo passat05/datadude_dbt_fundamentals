@@ -24,6 +24,11 @@ with
 
     ),
 
+    promotions  as (
+        select *
+        from {{ref('int_promotions_valid')}}
+    )
+
     fct_sales_items as (
         select
             -- ids
