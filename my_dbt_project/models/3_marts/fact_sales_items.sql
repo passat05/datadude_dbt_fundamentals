@@ -9,7 +9,7 @@
 with
     stg_sales as (
         select * 
-        from {{ ref("stg_sales") }}
+        from {{ ref("stg_cdc__sales") }}
         where 1 = 1
         {% if is_incremental() %}
         -- chỉ lấy dữ liệu mới hơn lần chạy trước
@@ -19,15 +19,15 @@ with
 
     stg_sales_lines as (
         select * 
-        from {{ ref("stg_sales_lines") }}
+        from {{ ref("stg_cdc__sales_lines") }}
         where 1 = 1
 
     ),
 
     promotions  as (
         select *
-        from {{ref('int_promotions_valid')}}
-    )
+        from {{ref('int_promotions_validated')}}
+    ),
 
     fct_sales_items as (
         select

@@ -1,5 +1,5 @@
 with
-    stg_employees as (select * from {{ ref('stg_employees') }}),
+    stg_employees as (select * from {{ ref('stg_sns__employees') }}),
 
     dim_employees as (
         select

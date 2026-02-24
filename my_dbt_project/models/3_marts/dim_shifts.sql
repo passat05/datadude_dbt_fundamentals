@@ -1,5 +1,5 @@
 with
-    stg_shifts as (select * from {{ ref("stg_shifts") }}),
+    stg_shifts as (select * from {{ ref("stg_cdc__shifts") }}),
 
     dim_shifts as (
         select
