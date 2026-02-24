@@ -1,5 +1,5 @@
 with
-    stg_products as (select * from {{ ref('stg_products') }}),
+    stg_products as (select * from {{ ref('stg_cdc__products') }}),
     
     dim_products as (
         select
