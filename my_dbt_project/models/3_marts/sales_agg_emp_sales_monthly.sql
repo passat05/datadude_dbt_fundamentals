@@ -5,7 +5,7 @@ select
     sum(total_price) total_price
 
 
-from {{ref('fact_sales_items')}} sales
+from {{ref('fct_sales_items')}} sales
 left join {{ref('dim_employees')}} employees
 on sales.cashier_employee_id = employees.employee_id
 left join {{ref('dim_date')}} dt
