@@ -1,0 +1,14 @@
+version: 2
+models:
+  - name: sales_agg_emp_sales_monthly
+    description: "Thống kế doanh số bán hàng theo nhân viên hàng tháng"
+    columns:
+      - name: year
+        description: "Năm bán hàng"
+      - name: month
+        description: "Tháng bán hàng"
+      - name: total_price
+        description: "Tổng giá trị đơn hàng"
+      - name: cashier_employee_id
+        description: "Mã nhân viên bán hàng"
+              - 

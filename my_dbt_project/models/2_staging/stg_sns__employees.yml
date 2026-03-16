@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_sns__employees
+    description: |
+      Danh sách nhân viên làm việc đã được làm sạch và chuẩn hóa kiểu dữ liệu.
+      Bảng chứa các thông tin nhân viên mới nhất, được xử lý bằng hàm ROW_NUMBER() và loại bỏ các record DELETE.
+    columns:
+      - name: full_name
+        description: "Tên đầy đủ của nhân viên kết hợp từ first_name và last_name"
+      - name: hourly_rate
+        description: "Mức lương theo giờ của nhân viên"
+      - name: created_at
+        description: "Ngày nhân viên gia nhập cửa hàng"

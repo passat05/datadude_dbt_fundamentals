@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_cdc__promotions
+    description: |
+      Danh sách các chương trình ưu đãi đã được làm sạch và chuẩn hóa kiểu dữ liệu.
+      Bảng này chứa các quy tắc giảm giá theo mùa, ngày lễ hoặc chiến dịch marketing. 
+      Bảng được sử dụng làm nguồn dữ liệu nền tảng để tính toán giá bán thực tế sau khuyến mãi trong các model doanh thu.
+    columns:
+      - name: discount_rate
+        description: "Tỷ lệ giảm giá. Đơn vị tính: Phần trăm (ví dụ: 7 = giảm 7%). Giá trị này phải luôn nằm trong khoảng [0, 100]"
+      - name: is_holiday
+        description: "Flag đánh dấu nếu chương trình chỉ áp dụng cho các ngày lễ quốc gia."
+      - name: promotion_start_date
+        description: "Thời điểm bắt đầu của chương trình"
+      - name: promotion_start_date
+        description: "Thời điểm kết thúc của chương trình"

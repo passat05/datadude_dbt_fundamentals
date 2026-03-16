@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: dim_date
+    description: "Danh sách thông tin ngày, được sử dụng trong các model downstreams phục vụ kinh doanh và vân hành."
+    columns:
+      - name: day_name
+        description: "Tên đầy đủ của ngày. Kết quả về thuộc 7 giá trị Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday"    
+      - name: is_holiday
+        description: "Có phải ngày lễ. Kết quả về thuộc 2 giá trị True/False"
+      - name: is_weekend
+        description: "Có phải ngày cuối tuần. Kết quả về thuộc 2 giá trị True/False"

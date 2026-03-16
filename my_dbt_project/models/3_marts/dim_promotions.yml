@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: dim_promotions
+    description: "Danh sách chương trình giảm giá, được sử dụng trong các model downstreams phục vụ kinh doanh và vân hành."
