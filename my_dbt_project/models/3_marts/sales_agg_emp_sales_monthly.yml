@@ -11,4 +11,3 @@ models:
         description: "Tổng giá trị đơn hàng"
       - name: cashier_employee_id
         description: "Mã nhân viên bán hàng"
-              - 
