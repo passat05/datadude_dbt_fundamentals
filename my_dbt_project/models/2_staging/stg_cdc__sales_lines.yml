@@ -1,0 +1,21 @@
+version: 2
+models:
+  - name: stg_cdc__sales_lines
+    description: |
+      Chi tiết bán hàng theo sản phẩm đã được làm sạch và chuẩn hoá dữ liệu.
+      Bảng chứa các thông tin đơn hàng mới nhất, được xử lý bằng hàm ROW_NUMBER() và loại bỏ các record DELETE.
+    columns:
+      - name: sales_id
+        description: "Khóa ngoài của bảng, thể hiện mã đơn hàng giao dịch."
+      - name: product_id
+        description: "Khóa ngoài của bảng, thể hiện thông tin sản phẩm trong đơn hàng"
+      - name: promotion_id
+        description: "Khóa ngoài của bảng, thể hiện thông tin khuyến mãi của sản phẩm trong đơn hàng"
+      - name: quantity_sold
+        description: "Số lượng sản phẩm bán ra trong đơn hàng"
+      - name: unit_price
+        description: "Đơn giá sản phẩm bán ra trong đơn hàng"
+      - name: unit_discount
+        description: "Chiết khấu được giảm trên 1 sản phẩm bán ra trong đơn hàng"
+      - name: discount_rate
+        description: "Tỷ lệ giảm giá trên 1 sản phẩm. Đơn vị tính: Phần trăm"                

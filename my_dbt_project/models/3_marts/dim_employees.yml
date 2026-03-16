@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: dim_employees
+    description: "Danh sách thông tin nhân viên được sử dụng trong các model downstreams phục vụ kinh doanh và vân hành."

@@ -6,6 +6,7 @@ sources:
       loaded_at_field: ingested_at # Cột dbt dùng để kiểm tra thời gian
       freshness:
         warn_after: {count: 12, period: hour} # Cảnh báo vàng sau 12h
+    description: "Dữ liệu được đẩy theo thông qua tiến trình Change Data Capture (CDC), near real-time. Dữ liệu thô nằm dưới dạng JSON trong cột `data`"
 
     tables:
       - name: sales # kế thừa cấu hình kiểm tra thời gian từ mặc định và thêm cảnh báo đỏ sau 24h
@@ -13,28 +14,35 @@ sources:
           freshness:
             error_after: {count: 24, period: hour} # Cảnh báo đỏ sau 12h
             filter: "ingested_at >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 48 HOUR)"
+        description: "Thông tin giao dịch bán hàng tổng quát."
 
       - name: sales_lines # kế thừa cấu hình kiểm tra thời gian từ mặc định và thêm cảnh báo đỏ sau 24h
         config:
           freshness:
             error_after: {count: 24, period: hour} # Cảnh báo đỏ sau 12h
+        description: "Chi tiết từng món hàng trong một hóa đơn (Line items)."
           
       - name: shifts
         config:
           freshness:
             warn_after: {count: 24, period: hour} # Ghi đè mức 12h của source và cảnh báo vàng sau 24h
+        description: "Dữ liệu phân ca trực của nhân viên tại cửa hàng."
 
       - name: promotions
         config:
           freshness: null # Tắt kiểm tra
+        description: "Danh mục các chương trình khuyến mãi và giảm giá."
 
       - name: products
         config:
           freshness: null # Tắt kiểm tra
+        description: "Danh mục sản phẩm niêm yết."
 
   - name: stroopwafel_sns
     database: dbt-project-485520
     schema: dbt_raw_sns
+    description: "Dữ liệu được đẩy theo cơ chế snapshot mỗi ngày vào lúc 12h đêm"
     tables:
       - name: employees # Bảng employees từ nguồn khác nên nằm ở schema khác
+        description: "Thông tin chi tiết hồ sơ nhân viên và mức lương theo giờ."
 

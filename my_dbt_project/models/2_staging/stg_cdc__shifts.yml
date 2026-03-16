@@ -1,0 +1,15 @@
+version: 2
+models:
+  - name: stg_cdc__shifts
+    description: |
+        Danh sách ca làm việc đã được làm sạch và chuẩn hoá dữ liệu.
+        Bảng chứa các thông tin các ca làm việc mới nhất, được xử lý bằng hàm ROW_NUMBER() và loại bỏ các record DELETE.
+    columns:
+      - name: shift_hours
+        description: "Khung giờ trực gốc dưới dạng chuỗi (Ví dụ: '10:00-14:00')."
+      - name: shift_start_at
+        description: "Thời điểm bắt đầu ca trực"
+      - name: shift_end_at
+        description: "Thời điểm kết thúc ca trực"
+      - name: employee_id
+        description: "Khoá ngoài của bảng, thể hiện nhân viên ca trực"

@@ -1,0 +1,23 @@
+version: 2
+models:
+  - name: fct_sales_lines
+    description: "Chi tiết bán hàng theo sản phẩm, được dùng trực tiếp cho các báo cáo và phân tích hoạt động bán hàng"
+    columns:
+      - name: sales_id
+        description: "Khóa ngoài của bảng, thể hiện mã đơn hàng giao dịch."
+      - name: product_id
+        description: "Khóa ngoài của bảng, thể hiện mã sản phẩm."
+      - name: cashier_employee_id
+        description: "Khóa ngoài của bảng, thể hiện mã nhân viên."
+      - name: promotion_id
+        description: "Khóa ngoài của bảng, thể hiện mã giảm giá."
+      - name: has_promotion
+        description: "Sản phẩm của đơn hàng có đang áp dụng chương trình giảm giá. Kết quả trả về thuộc 2 giá trị True/False"
+      - name: quantity_sold
+        description: "Số lượng sản phẩm bán ra trong đơn hàng"
+      - name: unit_price
+        description: "Đơn giá sản phẩm bán ra trong đơn hàng"
+      - name: unit_discount
+        description: "Chiết khấu được giảm trên 1 sản phẩm bán ra trong đơn hàng"
+      - name: discount_rate
+        description: "Tỷ lệ giảm giá trên 1 sản phẩm. Đơn vị tính: Phần trăm"  

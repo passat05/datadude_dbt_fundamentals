@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: int_promotions_validated
+    description: "Chi tiết các chương trình giảm giá hợp lệ"

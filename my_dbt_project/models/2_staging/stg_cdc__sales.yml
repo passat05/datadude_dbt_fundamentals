@@ -1,0 +1,13 @@
+version: 2
+models:
+  - name: stg_cdc__sales
+    description: |
+      Chi tiết bán hàng theo đơn hàng đã được làm sạch và chuẩn hoá dữ liệu.
+      Bảng chứa các thông tin đơn hàng mới nhất, được xử lý bằng hàm ROW_NUMBER() và loại bỏ các record DELETE.
+    columns:
+      - name: employee_id
+        description: "Khóa ngoài của bảng, thể hiện thông tin nhân viên phụ trách."
+      - name: sold_at
+        description: "Cột tính toán kết hợp từ `date` và `time` trong JSON để tạo ra mốc thời gian giao dịch chuẩn."
+      - name: total_price
+        description: "Tổng giá trị hóa đơn sau khi đã áp dụng tất cả các loại giảm giá."

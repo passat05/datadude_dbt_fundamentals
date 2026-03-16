@@ -1,0 +1,7 @@
+version: 2
+models:
+  - name: dim_shifts
+    description: "Danh sách thông tin ca làm việc, được sử dụng trong các model downstreams phục vụ kinh doanh và vân hành.""
+    columns:
+      - name: shift_duration_hours
+        description: "Số giờ trực trên 1 ca làm việc"
