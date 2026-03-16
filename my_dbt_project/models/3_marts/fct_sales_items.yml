@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: fct_sales_lines
+  - name: fct_sales_items
     description: "Chi tiết bán hàng theo sản phẩm, được dùng trực tiếp cho các báo cáo và phân tích hoạt động bán hàng"
     columns:
       - name: sales_id
