@@ -1,6 +1,12 @@
 {% docs promotion_logic %}
-Lưu trữ thông tin các chương trình giảm giá, được sử dụng trong các model downstreams phục vụ kinh doanh và vân hành.
-Hệ thống áp dụng các quy tắc sau:
-1. Nếu `is_holiday = true`, chương trình giảm giá không áp dụng.
-2. Nếu `is_holiday = false`, chương trình chỉ áp dụng khi ngày giao dịch nằm trong thời gian khuyến mãi (start_date, end_date)
+
+### Tổng quan
+Lưu trữ thông tin các chương trình giảm giá, phục vụ các model **downstream** cho mục đích kinh doanh và vận hành tại Stroopwafel Shop.
+
+### Quy tắc áp dụng (Business Logic)
+Hệ thống xác định hiệu lực của chương trình khuyến mãi dựa trên các điều kiện sau:
+
+* **Trường hợp 1 (Ngày lễ):** * Nếu `is_holiday = true`: Chương trình giảm giá **không** được áp dụng.
+* **Trường hợp 2 (Ngày thường):** * Nếu `is_holiday = false`: Chương trình chỉ có hiệu lực khi ngày giao dịch nằm trong khoảng thời gian xác định bởi `start_date` và `end_date`.
+
 {% enddocs %}
