@@ -45,4 +45,11 @@ sources:
     tables:
       - name: employees # Bảng employees từ nguồn khác nên nằm ở schema khác
         description: "Thông tin chi tiết hồ sơ nhân viên và mức lương theo giờ."
+        tests:
+          - unique:
+              column_name: employee_id
+
+          - not_null:
+              column_name: employee_id
+
 

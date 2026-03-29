@@ -18,4 +18,18 @@ models:
       - name: unit_discount
         description: "Chiết khấu được giảm trên 1 sản phẩm bán ra trong đơn hàng"
       - name: discount_rate
-        description: "Tỷ lệ giảm giá trên 1 sản phẩm. Đơn vị tính: Phần trăm"                
+        description: "Tỷ lệ giảm giá trên 1 sản phẩm. Đơn vị tính: Phần trăm"
+      - name: sales_line_id
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        tests:
+          - relationships:
+              to: ref('stg_cdc__products')
+              field: product_id                
+      - name: promotion_id
+        tests:
+          - relationships:
+              to: ref('stg_cdc__promotions')
+              field: promotion_id

@@ -9,5 +9,25 @@ models:
         description: "Khóa ngoài của bảng, thể hiện thông tin nhân viên phụ trách."
       - name: sold_at
         description: "Cột tính toán kết hợp từ `date` và `time` trong JSON để tạo ra mốc thời gian giao dịch chuẩn."
+        tests:
+          - not_null        
       - name: total_price
         description: "Tổng giá trị hóa đơn sau khi đã áp dụng tất cả các loại giảm giá."
+      - name: sales_id
+        tests:
+          - unique
+          - not_null:
+              config:
+                limit: 100
+                store_failures: true
+                severity: warn
+                where: "sold_at >= '2025-01-01'"
+      - name: payment_type
+        tests:
+          - accepted_values:
+              values: ['Cash', 'Mobile', 'Card']
+      - name: employee_id
+        tests:
+          - relationships:
+              to: ref('stg_sns__employees')
+              field: employee_id

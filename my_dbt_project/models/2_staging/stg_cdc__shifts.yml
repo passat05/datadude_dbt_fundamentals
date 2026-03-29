@@ -9,7 +9,19 @@ models:
         description: "Khung giờ trực gốc dưới dạng chuỗi (Ví dụ: '10:00-14:00')."
       - name: shift_start_at
         description: "Thời điểm bắt đầu ca trực"
+        tests:
+          - not_null
       - name: shift_end_at
         description: "Thời điểm kết thúc ca trực"
+        tests:
+          - not_null
       - name: employee_id
         description: "Khoá ngoài của bảng, thể hiện nhân viên ca trực"
+        tests:
+          - relationships:
+              to: ref('stg_sns__employees')
+              field: employee_id
+      - name: shift_id
+        tests:
+          - unique
+          - not_null

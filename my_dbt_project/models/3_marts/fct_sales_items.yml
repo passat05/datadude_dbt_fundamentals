@@ -7,10 +7,22 @@ models:
         description: "Khóa ngoài của bảng, thể hiện mã đơn hàng giao dịch."
       - name: product_id
         description: "Khóa ngoài của bảng, thể hiện mã sản phẩm."
+        tests:
+          - relationships:
+              to: ref('dim_products')
+              field: product_id   
       - name: cashier_employee_id
         description: "Khóa ngoài của bảng, thể hiện mã nhân viên."
+        tests:
+          - relationships:
+              to: ref('dim_employees')
+              field: employee_id   
       - name: promotion_id
         description: "Khóa ngoài của bảng, thể hiện mã giảm giá."
+        tests:
+          - relationships:
+              to: ref('dim_promotions')
+              field: promotion_id   
       - name: has_promotion
         description: "Sản phẩm của đơn hàng có đang áp dụng chương trình giảm giá. Kết quả trả về thuộc 2 giá trị True/False"
       - name: quantity_sold
@@ -20,4 +32,4 @@ models:
       - name: unit_discount
         description: "Chiết khấu được giảm trên 1 sản phẩm bán ra trong đơn hàng"
       - name: discount_rate
-        description: "Tỷ lệ giảm giá trên 1 sản phẩm. Đơn vị tính: Phần trăm"  
+        description: "Tỷ lệ giảm giá trên 1 sản phẩm. Đơn vị tính: Phần trăm"

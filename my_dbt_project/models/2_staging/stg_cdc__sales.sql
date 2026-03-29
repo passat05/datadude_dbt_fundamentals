@@ -28,7 +28,7 @@ with
 
 --- Chuẩn hoá kiểu dữ liệu cho các trường thông tin và thêm trường mới
 select
-    sales_id,
+    cast(sales_id as numeric) as sales_id,
     cast(employee_id as int64) as employee_id,
     payment_type,
     cast(total_price as numeric) as total_price,

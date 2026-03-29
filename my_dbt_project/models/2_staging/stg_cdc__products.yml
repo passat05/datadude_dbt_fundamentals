@@ -12,3 +12,7 @@ models:
         description: "Lương theo giờ của nhân viên"
       - name: created_at
         description: "Ngày nhân viên gia nhập cửa hàng"
+      - name: product_id
+        tests:
+          - unique
+          - not_null        
