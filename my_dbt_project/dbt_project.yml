@@ -17,6 +17,7 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
 
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
@@ -36,6 +37,9 @@ models:
       +schema: dbt_staging
       +materialized: view
     3_marts:
+      +persist_docs:
+        relation: true # Đẩy mô tả của bảng (Table description)
+        columns: true  # Đẩy mô tả của từng cột (Column descriptions)
       +materialized: table
 
 seeds:
@@ -44,3 +48,9 @@ seeds:
       +column_types:
         holiday_date: date
         is_fixed_date: boolean
+
+tests:
+  my_dbt_project:
+    +limit: 100
+    +store_failures: true
+    +severity: warn

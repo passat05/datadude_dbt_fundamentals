@@ -15,3 +15,7 @@ models:
         description: "Thời điểm bắt đầu của chương trình"
       - name: promotion_start_date
         description: "Thời điểm kết thúc của chương trình"
+      - name: promotion_id
+        tests:
+          - unique
+          - not_null
